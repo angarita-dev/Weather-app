@@ -1,0 +1,10 @@
+@import "../shared/mixins";
+@import "../shared/variables";
+
+.card {
+  background-color: $grey;
+  border-radius: 11px;
+  margin: auto;
+  width: 40vw;
+  height: 35vh;
+}
