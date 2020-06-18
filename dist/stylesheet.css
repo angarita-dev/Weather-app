@@ -184,7 +184,6 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .card {
-    height: 60vh;
     width: 80vw;
   }
   .card .weather-container {
@@ -246,6 +245,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
