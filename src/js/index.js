@@ -3,7 +3,8 @@ import listener from './listeners';
 import getWeather from './api';
 
 // Aux function
-function parser(data, unitsCharacter){
+function parse(data, unitsCharacter){
+  console.log(data);
   let degreeCharacter = String.fromCharCode(176);
   return {
     locationName: `${data.name}, ${data.sys.country}`,
@@ -16,12 +17,19 @@ function parser(data, unitsCharacter){
   }
 }
 
+function searchLocation(locationName){
+  const unitsCharacter = 'c';
+  const units = 'metric';
+  let displayWeatherOnTimeout = (weatherInfo) => { setTimeout(() => { Display.weather(weatherInfo) }, 500 ) }
+
+  Display.weatherContainer();
+  Display.clear();
+  getWeather({locationName, units}).then(data => { displayWeatherOnTimeout(parse(data, unitsCharacter)) });
+
+}
+
 (function setup() {
   Display.searchSuggestions();
 
-  let printer = (data) => { console.log(data) };
-  listener(printer);
-
- // getWeather({city: 'Medellin', units: 'metric'})
- //   .then(data => Display.weather(parser(data,'c')));
+  listener(searchLocation);
 })();

@@ -24,6 +24,10 @@ body {
   fill: #fff;
 }
 
+.invisible {
+  display: none !important;
+}
+
 @keyframes loading {
   100% {
     transform: translateX(350%);
@@ -201,6 +205,10 @@ body {
 }
 .icon:hover {
   fill: #fff;
+}
+
+.invisible {
+  display: none !important;
 }
 
 .container {

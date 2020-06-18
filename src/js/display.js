@@ -28,6 +28,12 @@ function clear(){
   pressurePlaceholder.innerHTML = '';
 }
 
+function weatherContainer() {
+  const weatherContainer = document.getElementById('weather-container');
+
+  weatherContainer.classList.remove('invisible'); // Displaying skelleton
+}
+
 function weather({locationName, temperature, description, feels, clouds, humidity, pressure}){
   const cityPlaceholder = document.getElementById('location');
   const temperaturePlaceholder = document.getElementById('temp');
@@ -50,5 +56,6 @@ function weather({locationName, temperature, description, feels, clouds, humidit
 export { 
   searchSuggestions,
   clear,
-  weather
+  weather,
+  weatherContainer
 }
