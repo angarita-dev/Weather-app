@@ -74,6 +74,12 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+@media only screen and (max-width: 1200px) {
+  .card .weather-container .right-container,
+.card .weather-container .left-container {
+    margin: 1rem auto 2rem;
+  }
+}
 .card .weather-container .right-container #temp,
 .card .weather-container .left-container #temp {
   font-size: 5rem;
@@ -176,6 +182,29 @@ body {
   margin-bottom: 0.05rem;
 }
 
+@media only screen and (max-width: 1200px) {
+  .card {
+    width: 80vw;
+  }
+  .card .weather-container {
+    flex-direction: column;
+  }
+  .card .weather-container .right-container,
+.card .weather-container .left-container {
+    margin: 1rem auto 2rem;
+  }
+  .card .weather-container .right-container {
+    width: 80%;
+    flex-direction: row;
+    border: none;
+    border-top: 2px solid #4d4d4d;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .card .weather-container .right-container {
+    flex-direction: column;
+  }
+}
 @keyframes loading {
   100% {
     transform: translateX(350%);

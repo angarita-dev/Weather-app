@@ -37,6 +37,8 @@
     color: $light-white;
     width: 100%;
 
+
+
     .right-container,
     .left-container {
       @include flex-column;
@@ -44,6 +46,11 @@
       margin: 1rem 1rem 2rem;
       justify-content: space-between;
       align-items: center;
+
+      @media only screen and (max-width: 1200px){
+        margin: 1rem auto 2rem;
+      }
+
 
       #temp {
         font-size: 5rem;
@@ -100,3 +107,34 @@
     p { margin-bottom: 0.05rem; }
   }
 }
+
+@media only screen and (max-width: 1200px){
+  .card {
+    width: 80vw;
+    .weather-container {
+      flex-direction: column;
+      .right-container,
+      .left-container {
+        margin: 1rem auto 2rem;
+      }
+      .right-container {
+        width: 80%;
+        flex-direction: row;
+        border: none;
+        border-top: 2px solid $super-light-grey;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .card {
+    .weather-container {
+      .right-container{
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+
