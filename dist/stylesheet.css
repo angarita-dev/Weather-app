@@ -184,10 +184,10 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .card {
-    height: 60vh;
     width: 80vw;
   }
   .card .weather-container {
+    min-height: 60vh;
     flex-direction: column;
   }
   .card .weather-container .right-container,
@@ -246,6 +246,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
