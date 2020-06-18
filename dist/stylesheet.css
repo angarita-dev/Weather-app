@@ -184,6 +184,7 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .card {
+    height: 60vh;
     width: 80vw;
   }
   .card .weather-container {

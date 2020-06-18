@@ -110,6 +110,7 @@
 
 @media only screen and (max-width: 1200px){
   .card {
+    height: 60vh;
     width: 80vw;
     .weather-container {
       flex-direction: column;
