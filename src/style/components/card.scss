@@ -7,6 +7,13 @@
   margin: auto;
   width: 40vw;
 
+  .empty-container { 
+    color: $light-white;
+    font-family: $text-font;
+    margin: 3rem; 
+    text-align: center;
+  }
+
   .input-container {
     @include flex-row;
 

@@ -39,6 +39,12 @@ body {
   margin: auto;
   width: 40vw;
 }
+.card .empty-container {
+  color: #d9d9d9;
+  font-family: "Open Sans", sans-serif;
+  margin: 3rem;
+  text-align: center;
+}
 .card .input-container {
   display: flex;
   flex-direction: row;

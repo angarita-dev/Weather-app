@@ -30,11 +30,21 @@ function clear(){
 
 function weatherContainer() {
   const weatherContainer = document.getElementById('weather-container');
+  const emptyContainer = document.getElementById('empty-container');
 
   weatherContainer.classList.remove('invisible'); // Displaying skelleton
+  if(!emptyContainer.classList.contains('invisible')) emptyContainer.classList.add('invisible');
 }
 
-function weather({locationName, temperature, description, feels, clouds, humidity, pressure}){
+function error() {
+  const weatherContainer = document.getElementById('weather-container');
+  const emptyContainer = document.getElementById('empty-container');
+
+  weatherContainer.classList.add('invisible');
+  emptyContainer.classList.remove('invisible');
+}
+
+function weather({locationName, temperature, description, feels, clouds, humidity, pressure}) {
   const cityPlaceholder = document.getElementById('location');
   const temperaturePlaceholder = document.getElementById('temp');
   const descriptionPlaceholder = document.getElementById('description');
@@ -57,5 +67,6 @@ export {
   searchSuggestions,
   clear,
   weather,
-  weatherContainer
+  weatherContainer,
+  error
 }

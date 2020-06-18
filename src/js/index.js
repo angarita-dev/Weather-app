@@ -4,7 +4,6 @@ import getWeather from './api';
 
 // Aux function
 function parse(data, unitsCharacter){
-  console.log(data);
   let degreeCharacter = String.fromCharCode(176);
   return {
     locationName: `${data.name}, ${data.sys.country}`,
@@ -24,7 +23,13 @@ function searchLocation(locationName){
 
   Display.weatherContainer();
   Display.clear();
-  getWeather({locationName, units}).then(data => { displayWeatherOnTimeout(parse(data, unitsCharacter)) });
+  getWeather({locationName, units})
+    .then(data => {
+      displayWeatherOnTimeout(parse(data, unitsCharacter));
+    })
+    .catch(() => {
+      Display.error();
+    });
 
 }
 
