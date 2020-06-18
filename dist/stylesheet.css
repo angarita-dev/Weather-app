@@ -15,12 +15,72 @@ body {
   font-family: "Spartan", sans-serif;
 }
 
+.icon {
+  cursor: pointer;
+  fill: #d9d9d9;
+  transition: fill 0.5s ease;
+}
+.icon:hover {
+  fill: #fff;
+}
+
 .card {
   background-color: #262626;
   border-radius: 11px;
   margin: auto;
   width: 40vw;
-  height: 35vh;
+}
+.card .input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+}
+.card .input-container input {
+  color: #d9d9d9;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+  width: 90%;
+  background-color: #262626;
+  border: none;
+  border-bottom: 2px solid #333;
+  transition: border 0.5s ease;
+}
+.card .input-container input:focus {
+  outline: none;
+  border-bottom: 2px solid #4d4d4d;
+}
+.card .weather-container {
+  display: flex;
+  flex-direction: row;
+  font-family: "Spartan", sans-serif;
+  color: #d9d9d9;
+  width: 100%;
+}
+.card .weather-container .right-container,
+.card .weather-container .left-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .weather-container .right-container .temp,
+.card .weather-container .left-container .temp {
+  font-size: 5rem;
+  color: #fff;
+}
+.card .weather-container .right-container {
+  width: 40%;
+  color: #8c8c8c;
+  border-left: 2px solid #4d4d4d;
+  justify-content: space-around;
+}
+.card .weather-container .left-container {
+  width: 60%;
+}
+.card .weather-container h1, .card .weather-container h2, .card .weather-container h3, .card .weather-container h4, .card .weather-container p {
+  margin-bottom: 0.05rem;
 }
 
 html {
@@ -38,6 +98,15 @@ body {
 .title {
   color: #fff;
   font-family: "Spartan", sans-serif;
+}
+
+.icon {
+  cursor: pointer;
+  fill: #d9d9d9;
+  transition: fill 0.5s ease;
+}
+.icon:hover {
+  fill: #fff;
 }
 
 .container {

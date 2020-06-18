@@ -6,5 +6,52 @@
   border-radius: 11px;
   margin: auto;
   width: 40vw;
-  height: 35vh;
+  .input-container {
+    @include flex-row;
+
+    justify-content: space-between;
+    padding: 2rem;
+    input {
+      color: $light-white;
+      font-family: $text-font;
+      font-size: 1.5rem;
+      width: 90%;
+      background-color: $grey;
+      border: none;
+      border-bottom: 2px solid $light-grey;
+      transition: border 0.5s ease;
+
+      &:focus{
+        outline: none;
+        border-bottom: 2px solid $super-light-grey;
+      }
+    }
+  }
+  .weather-container {
+    @include flex-row;
+
+    font-family: $title-font;
+    color: $light-white;
+    width: 100%;
+    .right-container,
+    .left-container {
+      @include flex-column;
+
+      margin: 1rem 1rem 2rem;
+      justify-content: space-between;
+      align-items: center;
+      .temp { 
+        font-size: 5rem;
+        color: $white;
+      }
+    } 
+    .right-container {
+      width: 40%;
+      color: $dark-white;
+      border-left: 2px solid $super-light-grey;
+      justify-content: space-around;
+    }
+    .left-container { width: 60%; }
+    h1, h2, h3, h4, p { margin-bottom: 0.05rem; }
+  }
 }
