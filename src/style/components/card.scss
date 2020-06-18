@@ -6,11 +6,13 @@
   border-radius: 11px;
   margin: auto;
   width: 40vw;
+
   .input-container {
     @include flex-row;
 
     justify-content: space-between;
     padding: 2rem;
+
     input {
       color: $light-white;
       font-family: $text-font;
@@ -21,18 +23,20 @@
       border-bottom: 2px solid $light-grey;
       transition: border 0.5s ease;
 
-      &:focus{
+      &:focus {
         outline: none;
         border-bottom: 2px solid $super-light-grey;
       }
     }
   }
+
   .weather-container {
     @include flex-row;
 
     font-family: $title-font;
     color: $light-white;
     width: 100%;
+
     .right-container,
     .left-container {
       @include flex-column;
@@ -40,9 +44,11 @@
       margin: 1rem 1rem 2rem;
       justify-content: space-between;
       align-items: center;
-      #temp { 
+
+      #temp {
         font-size: 5rem;
         color: $white;
+
         &:empty {
           @include skelleton;
 
@@ -50,19 +56,22 @@
           height: 95px;
         }
       }
+
       #location:empty {
         @include skelleton;
 
         width: 190px;
         height: 30px;
       }
+
       #description:empty {
         @include skelleton;
 
         width: 80px;
         height: 22px;
       }
-    } 
+    }
+
     .right-container {
       width: 40%;
       color: $dark-white;
@@ -72,7 +81,7 @@
       #pressure,
       #humidity,
       #clouds,
-      #feels{
+      #feels {
         &:empty {
           @include skelleton;
 
@@ -81,7 +90,13 @@
         }
       }
     }
+
     .left-container { width: 60%; }
-    h1, h2, h3, h4, p { margin-bottom: 0.05rem; }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p { margin-bottom: 0.05rem; }
   }
 }
