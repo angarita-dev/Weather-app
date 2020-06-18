@@ -1,0 +1,13 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Simple weather app that uses async javascript.",
+  "main": "dist/js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js --mode=production && sass src/style/main.scss dist/stylesheet.css --style compressed",
+    "build-dev": "webpack --config webpack.config.js && sass src/style/main.scss dist/stylesheet.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
