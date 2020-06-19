@@ -1,5 +1,5 @@
 import * as Display from './display';
-import listener from './listeners';
+import * as Listener from './listeners';
 import getWeather from './api';
 
 // Aux function
@@ -16,9 +16,17 @@ function parse(data, unitsCharacter){
   }
 }
 
+function getUnits(){
+  const unitInput = document.getElementById('unit-input');
+
+  return unitInput.value == 'imperial' ? 
+    { units: unitInput.value, unitsCharacter: 'F' } :
+    { units: unitInput.value, unitsCharacter: 'C' }
+}
+
+
 function searchLocation(locationName){
-  const unitsCharacter = 'c';
-  const units = 'metric';
+  const { unitsCharacter, units } = getUnits()
   let displayWeatherOnTimeout = (weatherInfo) => { setTimeout(() => { Display.weather(weatherInfo) }, 500 ) }
 
   Display.weatherContainer();
@@ -35,6 +43,6 @@ function searchLocation(locationName){
 
 (function setup() {
   Display.searchSuggestions();
-
-  listener(searchLocation);
+  Listener.onSearch(searchLocation);
+  Listener.unitChange();
 })();

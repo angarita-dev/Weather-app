@@ -48,6 +48,7 @@ body {
 .card .input-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   padding: 2rem;
 }
@@ -64,6 +65,27 @@ body {
 .card .input-container input:focus {
   outline: none;
   border-bottom: 2px solid #4d4d4d;
+}
+.card .input-container .unit-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1rem;
+  justify-content: space-between;
+}
+.card .input-container .unit-container input {
+  display: none;
+}
+.card .input-container .unit-container .unit-toggle {
+  padding: 0 0.5rem;
+  cursor: pointer;
+  color: #8c8c8c;
+  font-family: "Spartan", sans-serif;
+  border-bottom: 1px solid #333;
+  transition: color, border 1s ease;
+}
+.card .input-container .unit-container .unit-toggle.selected {
+  color: #d9d9d9;
+  border-bottom: 1px solid #8c8c8c;
 }
 .card .weather-container {
   display: flex;

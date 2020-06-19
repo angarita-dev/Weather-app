@@ -17,6 +17,7 @@
   .input-container {
     @include flex-row;
 
+    align-items: center;
     justify-content: space-between;
     padding: 2rem;
 
@@ -33,6 +34,28 @@
       &:focus {
         outline: none;
         border-bottom: 2px solid $super-light-grey;
+      }
+    }
+
+    .unit-container {
+      @include flex-row;
+
+      margin-left: 1rem;
+      justify-content: space-between;
+
+      input { display: none; }
+      .unit-toggle {
+        padding: 0 0.5rem;
+        cursor: pointer;
+        color: $dark-white;
+        font-family: $title-font;
+        border-bottom: 1px solid $light-grey;
+
+        transition: color, border 1s ease;
+        &.selected {
+          color: $light-white;
+          border-bottom: 1px solid $dark-white;
+        }
       }
     }
   }
