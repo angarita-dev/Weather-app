@@ -1,16 +1,16 @@
 function searchSuggestions() {
   const input = document.getElementById('location-input');
-  const options = ["New York", "Paris", "Berlin", "Buenos Aires", "London"];
-  input.setAttribute('placeholder', options[options.length-1]);
+  const options = ['New York', 'Paris', 'Berlin', 'Buenos Aires', 'London'];
+  input.setAttribute('placeholder', options[options.length - 1]);
 
   let counter = 0;
-  let interval = setInterval(() => {
+  setInterval(() => {
     input.setAttribute('placeholder', options[counter]);
-    counter = counter == options.length-1 ? 0 : counter+1;
-  },1500);
+    counter = (counter === options.length - 1) ? 0 : counter + 1;
+  }, 1500);
 }
 
-function clear(){
+function clear() {
   const cityPlaceholder = document.getElementById('location');
   const temperaturePlaceholder = document.getElementById('temp');
   const descriptionPlaceholder = document.getElementById('description');
@@ -33,7 +33,7 @@ function weatherContainer() {
   const emptyContainer = document.getElementById('empty-container');
 
   weatherContainer.classList.remove('invisible'); // Displaying skelleton
-  if(!emptyContainer.classList.contains('invisible')) emptyContainer.classList.add('invisible');
+  if (!emptyContainer.classList.contains('invisible')) emptyContainer.classList.add('invisible');
 }
 
 function error() {
@@ -44,7 +44,9 @@ function error() {
   emptyContainer.classList.remove('invisible');
 }
 
-function weather({locationName, temperature, description, feels, clouds, humidity, pressure}) {
+function weather({
+  locationName, temperature, description, feels, clouds, humidity, pressure,
+}) {
   const cityPlaceholder = document.getElementById('location');
   const temperaturePlaceholder = document.getElementById('temp');
   const descriptionPlaceholder = document.getElementById('description');
@@ -63,10 +65,10 @@ function weather({locationName, temperature, description, feels, clouds, humidit
 }
 
 
-export { 
+export {
   searchSuggestions,
   clear,
   weather,
   weatherContainer,
-  error
-}
+  error,
+};
