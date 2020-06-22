@@ -5,7 +5,7 @@ import getWeather from './api';
 // Aux function
 function parse(data, unitsCharacter) {
   const degreeCharacter = String.fromCharCode(176);
-  const getTemperature = (data) => { parseInt(data, 10); };
+  const getTemperature = (data) => parseInt(data, 10);
 
   return {
     locationName: `${data.name}, ${data.sys.country}`,
