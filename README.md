@@ -2,7 +2,7 @@
 
 This project is part of the Main JavaScript curriculum at [Microverse](https://www.microverse.org/)
 
-### [Live version](https://rawcdn.githack.com/codingAngarita/Weather-app/feature/basic-functionality/dist/index.html)
+### [Live version](https://raw.githack.com/codingAngarita/Weather-app/feature/basic-functionality/dist/index.html);
 
 Objectives of the project:
 
