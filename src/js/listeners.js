@@ -1,11 +1,16 @@
-function onSearch(functionToCall) {
-  const searchIcon = document.getElementById('search-icon');
+function getLocationValue() {
   const locationInput = document.getElementById('location-input');
 
-  searchIcon.onclick = () => { functionToCall(locationInput.value); };
+  return locationInput.value;
 }
 
-function unitChange() {
+function onSearch(searchLocationFunction) {
+  const searchIcon = document.getElementById('search-icon');
+
+  searchIcon.onclick = () => { searchLocationFunction(getLocationValue()); };
+}
+
+function unitChange(searchLocationFunction) {
   const unitInput = document.getElementById('unit-input');
   const unitOptions = Array.from(document.getElementsByClassName('unit-toggle'));
 
@@ -18,6 +23,7 @@ function unitChange() {
       removeSelectedOption();
       unitInput.value = unitOption.id;
       unitOption.classList.add('selected');
+      searchLocationFunction(getLocationValue());
     };
   });
 }

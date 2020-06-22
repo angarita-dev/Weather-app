@@ -26,8 +26,11 @@ function getUnits() {
     : { units: unitInput.value, unitsCharacter: 'C' };
 }
 
-
 function searchLocation(locationName) {
+  console.log(!locationName);
+  console.log(locationName.match(/^ *$/) !== null);
+  if(!locationName || locationName.match(/^ *$/) !== null) return
+
   const { unitsCharacter, units } = getUnits();
   const displayWeatherOnTimeout = (weatherInfo) => {
     setTimeout(() => { Display.weather(weatherInfo); }, 500);
@@ -47,5 +50,5 @@ function searchLocation(locationName) {
 (function setup() {
   Display.searchSuggestions();
   Listener.onSearch(searchLocation);
-  Listener.unitChange();
+  Listener.unitChange(searchLocation);
 }());
