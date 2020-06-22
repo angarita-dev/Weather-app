@@ -18,6 +18,7 @@ function clear() {
   const cloudsPlaceholder = document.getElementById('clouds');
   const humidityPlaceholder = document.getElementById('humidity');
   const pressurePlaceholder = document.getElementById('pressure');
+  const imagePlaceholder = document.getElementById('weather-icon');
 
   cityPlaceholder.innerHTML = '';
   temperaturePlaceholder.innerHTML = '';
@@ -26,6 +27,7 @@ function clear() {
   cloudsPlaceholder.innerHTML = '';
   humidityPlaceholder.innerHTML = '';
   pressurePlaceholder.innerHTML = '';
+  imagePlaceholder.src = '';
 }
 
 function weatherContainer() {
@@ -45,7 +47,7 @@ function error() {
 }
 
 function weather({
-  locationName, temperature, description, feels, clouds, humidity, pressure,
+  locationName, temperature, description, feels, clouds, humidity, pressure, weatherIconUrl,
 }) {
   const cityPlaceholder = document.getElementById('location');
   const temperaturePlaceholder = document.getElementById('temp');
@@ -54,6 +56,7 @@ function weather({
   const cloudsPlaceholder = document.getElementById('clouds');
   const humidityPlaceholder = document.getElementById('humidity');
   const pressurePlaceholder = document.getElementById('pressure');
+  const imagePlaceholder = document.getElementById('weather-icon');
 
   cityPlaceholder.innerHTML = locationName;
   temperaturePlaceholder.innerHTML = temperature;
@@ -62,6 +65,7 @@ function weather({
   cloudsPlaceholder.innerHTML = clouds;
   humidityPlaceholder.innerHTML = humidity;
   pressurePlaceholder.innerHTML = pressure;
+  imagePlaceholder.src = weatherIconUrl;
 }
 
 

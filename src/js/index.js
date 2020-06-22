@@ -15,6 +15,7 @@ function parse(data, unitsCharacter) {
     clouds: `Clouds: ${data.clouds.all}%`,
     humidity: `Humidity: ${data.main.humidity}%`,
     pressure: `Pressure: ${data.main.pressure} hPa`,
+    weatherIconUrl: `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
   };
 }
 
@@ -27,7 +28,7 @@ function getUnits() {
 }
 
 function searchLocation(locationName) {
-  if(!locationName || locationName.match(/^ *$/) !== null) return
+  if (!locationName || locationName.match(/^ *$/) !== null) return;
 
   const { unitsCharacter, units } = getUnits();
   const displayWeatherOnTimeout = (weatherInfo) => {
