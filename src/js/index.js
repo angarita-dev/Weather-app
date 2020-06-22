@@ -27,8 +27,6 @@ function getUnits() {
 }
 
 function searchLocation(locationName) {
-  console.log(!locationName);
-  console.log(locationName.match(/^ *$/) !== null);
   if(!locationName || locationName.match(/^ *$/) !== null) return
 
   const { unitsCharacter, units } = getUnits();
