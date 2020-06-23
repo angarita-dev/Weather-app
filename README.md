@@ -1,5 +1,9 @@
 # Weather app.
 
+This project is part of the Main JavaScript curriculum at [Microverse](https://www.microverse.org/)
+
+### [Live version](https://raw.githack.com/codingAngarita/Weather-app/feature/basic-functionality/dist/index.html)
+
 Objectives of the project:
 
 * Working with APIs.
@@ -7,5 +11,9 @@ Objectives of the project:
 * Module pattern.
 * Implementing OOP concepts.
 
-## Why am I working alone
-I'm resuming microverse after a personal leave, I'm authorized to work alone since there were no coding partners available
+Technologies used:
+
+* HTML & CSS
+* Sass
+* Pure JS
+* OpenWeather API
