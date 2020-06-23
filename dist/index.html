@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>To-do List</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Spartan&display=swap" rel="stylesheet">
   </head>
   <body>
-     <script src="bundle.js"></script>
+    <div class="container">
+      <h1 class="title">Weather App</h1>
+      <div class="card">
+        <div class="input-container">
+          <input id="location-input"/>
+          <div class="icon" id="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg> 
+          </div>
+          <div class="unit-container">
+            <input type="checkbox" id="unit-input" value="metric"/>
+            <span class="unit-toggle selected" id="metric">C</span>
+            <span class="unit-toggle" id="imperial">F</span>
+          </div>
+        </div>
+        <div class="weather-container invisible" id="weather-container">
+          <div class="left-container">
+            <div class="top-row">
+              <h2 id="location"></h2>
+              <img id="weather-icon">
+            </div>
+            <h1 id="temp"></h1>
+            <h3 id="description"></h3>
+          </div>
+          <div class="right-container">
+            <h4 id="feels"></h4>
+            <h4 id="clouds"></h4>
+            <h4 id="humidity"></h4>
+            <h4 id="pressure"></h4>
+          </div>
+        </div>
+        <div class="empty-container invisible" id="empty-container">
+          <h1>Location not foud</h1>
+          <img src="resources/error.svg"/>
+        </div>
+      </div>
+    </div>
+    <script src="bundle.js"></script>
   </body>
 </html>

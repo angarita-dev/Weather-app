@@ -1,0 +1,172 @@
+@import "../shared/mixins";
+@import "../shared/variables";
+
+.card {
+  background-color: $grey;
+  border-radius: 11px;
+  margin: auto;
+  width: 40vw;
+
+  .empty-container {
+    color: $light-white;
+    font-family: $text-font;
+    margin: 3rem;
+    text-align: center;
+  }
+
+  .input-container {
+    @include flex-row;
+
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+
+    input {
+      color: $light-white;
+      font-family: $text-font;
+      font-size: 1.5rem;
+      width: 90%;
+      background-color: $grey;
+      border: none;
+      border-bottom: 2px solid $light-grey;
+      transition: border 0.5s ease;
+
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid $super-light-grey;
+      }
+    }
+
+    .unit-container {
+      @include flex-row;
+
+      margin-left: 1rem;
+      justify-content: space-between;
+
+      input { display: none; }
+
+      .unit-toggle {
+        padding: 0 0.5rem;
+        cursor: pointer;
+        color: $dark-white;
+        font-family: $title-font;
+        border-bottom: 1px solid $light-grey;
+        transition: color, border 1s ease;
+
+        &.selected {
+          color: $light-white;
+          border-bottom: 1px solid $dark-white;
+        }
+      }
+    }
+  }
+
+  .weather-container {
+    @include flex-row;
+
+    font-family: $title-font;
+    color: $light-white;
+    width: 100%;
+
+    .right-container,
+    .left-container {
+      @include flex-column;
+
+      margin: 1rem 1rem 2rem;
+      justify-content: space-between;
+      align-items: center;
+
+      .top-row {
+        @include flex-row;
+
+        align-items: center;
+        justify-content: center;
+      }
+
+      #temp {
+        font-size: 5rem;
+        color: $white;
+
+        &:empty {
+          @include skelleton;
+
+          width: 227px;
+          height: 95px;
+        }
+      }
+
+      #location:empty {
+        @include skelleton;
+
+        width: 190px;
+        height: 30px;
+      }
+
+      #description:empty {
+        @include skelleton;
+
+        width: 80px;
+        height: 22px;
+      }
+    }
+
+    .right-container {
+      width: 40%;
+      color: $dark-white;
+      border-left: 2px solid $super-light-grey;
+      justify-content: space-around;
+
+      #pressure,
+      #humidity,
+      #clouds,
+      #feels {
+        &:empty {
+          @include skelleton;
+
+          width: 160px;
+          height: 20px;
+        }
+      }
+    }
+
+    .left-container { width: 60%; }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p { margin-bottom: 0.05rem; }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .card {
+    width: 80vw;
+
+    .weather-container {
+      flex-direction: column;
+
+      .right-container,
+      .left-container {
+        margin: 1rem auto 2rem;
+      }
+
+      .right-container {
+        width: 80%;
+        flex-direction: row;
+        border: none;
+        border-top: 2px solid $super-light-grey;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .card {
+    .weather-container {
+      .right-container {
+        flex-direction: column;
+      }
+    }
+  }
+}
